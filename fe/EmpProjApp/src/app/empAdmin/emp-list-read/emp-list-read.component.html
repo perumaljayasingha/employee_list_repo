@@ -1,0 +1,58 @@
+<!-- <p>emp-list-read works!</p> -->
+ <h1>{{message}}</h1>
+  <div class="center-container" *ngIf="readBox">
+    <!-- <div>All Employees List...</div>  <br> <br \> -->
+    <table border="4">
+        <thead>
+            <tr>
+                <!-- <th>Emp_Id</th> -->
+                <th>Employee Name</th>
+                <!-- <th>Emp_MobileNumber</th> -->
+                <!-- <th>Emp_Email Id</th> -->
+                <th>Emp_Role</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let Emp of employeesList">
+                <!-- <td>{{Emp.emp_Id}}</td> -->
+                <td>{{Emp.empName}}</td>
+                <!-- <td>{{Emp.empMobNumber}}</td> -->
+                <!-- <td>{{Emp.empEMailId}}</td> -->
+                <td>{{Emp.empRole}}</td>
+                <td><button (click)="onDeleteEmp(Emp.emp_Id)" >DELETE</button></td>
+                <!-- <td><button (click)="onUpdateEmp(Emp.emp_Id)" >Update</button></td> -->
+                <!-- <td><button>Update</button></td> -->
+                <td><button (click)="onViewEmp(Emp.emp_Id)" >View</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="center-container" *ngIf="viewBox">
+    <table border="4">
+        <thead>
+            <tr>
+                <th>Emp_Id</th>
+                <th>Employee Name</th>
+                <th>Emp_MobileNumber</th>
+                <th>Emp_Email Id</th>
+                <th>Emp_Role</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngIf="singleEmp">
+                <td>{{singleEmp.emp_Id}}</td>
+                <td>{{singleEmp.empName}}</td>
+                <td>{{singleEmp.empMobNumber}}</td>
+                <td>{{singleEmp.empEMailId}}</td>
+                <td>{{singleEmp.empRole}}</td>
+                <td><button (click)="onDeleteEmp(singleEmp.emp_Id)" >DELETE</button></td>
+                <!-- <td><button (click)="onUpdateEmp(Emp.emp_Id)" >Update</button></td> -->
+                <!-- <td><button>Update</button></td> -->
+                <!-- <td><button (click)="onViewEmp(Emp.emp_Id)" >View</button></td> -->
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,11 @@
+<!-- <p>emp-list works!</p> -->
+ <h1>{{message}}</h1>
+<form [formGroup]="empForm" (ngSubmit)="empSave()">
+    <h1>Employee Details Form</h1>
+    First Name : <input type="text" formControlName="empName">  <br />
+    <!-- Last Name : <input type="text" formControlName="empLName">  <br /> -->
+    Mobile Number : <input type="text" formControlName="empMobNumber">  <br />
+    Email Id : <input type="text" formControlName="empEMailId">  <br />
+    Role : <input type="text" formControlName="empRole">  <br />
+    <input type="submit" value="Add Employee">
+</form>
